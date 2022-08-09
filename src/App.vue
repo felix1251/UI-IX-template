@@ -8,6 +8,14 @@
         </div>
         </div>
         <div class="phone-header">
+          <div class="header-details">
+            <span class="time">{{time}}</span>
+          </div>
+          <div class="header-details">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <i class="fa fa-wifi" aria-hidden="true"></i>
+            <i class="fa fa-signal" aria-hidden="true"></i>
+          </div>
         </div>
         <router-view />
       </div>
@@ -19,18 +27,25 @@
 export default {
   data() {
     return {
-      showFooter: false,
-    };
+      interval: null,
+      time: null
+    }
   },
-  watch: {
-    $route(n) {
-      if (n.name != "home") {
-        this.showFooter = true;
-      } else {
-        this.showFooter = false;
-      }
-    },
+  beforeDestroy() {
+    // prevent memory leak
+    clearInterval(this.interval)
   },
+  created() {
+    // update the time every second
+    this.interval = setInterval(() => {
+      // Concise way to format time according to system locale.
+      // In my case this returns "3:48:00 am"
+      this.time = Intl.DateTimeFormat(navigator.language, {
+        hour: 'numeric',
+        minute: 'numeric'
+      }).format()
+    }, 1000)
+  }
 };
 </script>
 
@@ -61,11 +76,27 @@ export default {
 }
 
 .phone-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: 25px;
   background-color: rgba(0, 0, 0, 0.3);
-  display: flex;
   position: absolute;
+}
+
+.header-details{
+  display: flex;
+  margin: 0px 25px;
+  color: white;
+}
+
+.fa{
+  margin-left: 7px;
+}
+
+.time{
+  font-size: 14px;
 }
 
 .icon{

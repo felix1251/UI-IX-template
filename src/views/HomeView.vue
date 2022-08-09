@@ -2,10 +2,12 @@
   <div class="home">
     <div class="app-list">
       <div class="app-container">
-        <router-link to="/about" exact>
-          <div class="app"></div>
+        <router-link to="/loading-screen" exact>
+          <div class="app">
+            <img class="logo" :src="require(`@/assets/app-logo.png`)" />
+          </div>
         </router-link>
-        <span>App</span>
+        <span>ELS PSN</span>
       </div>
     </div>
   </div>
@@ -43,11 +45,16 @@ export default {
 }
 
 .app {
-  background-image: linear-gradient(to right, #ff9966, #ff5e62);
+  background-image: linear-gradient(to left, #8bcd50, #2e8bc0);
   width: 50px;
   height: 50px;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.app > .logo{
+  width: 50px;
+  height: 50px;
 }
 
 .app-container > span {
