@@ -1,6 +1,7 @@
 <template>
   <div class="pin-view">
     <div class="info">
+      <img class="logo" :src="require(`@/assets/company-logo.png`)" />
       <span>ELS Philippines Inc.</span>
       <span>Provincial Sales Network</span>
     </div>
@@ -53,9 +54,16 @@ export default {
   font-size: 30px;
 }
 
+.logo {
+  margin-bottom: 3px;
+  width: 130px;
+  border: 2px solid white;
+  border-radius: 15px;
+}
 .info{
   margin-top: -100px;
   display: flex;
+  color: #595959;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -63,11 +71,12 @@ export default {
   gap: 2;
 }
 
-.info > span:nth-child(1){
-  font-size: 13px;
+.info > span:nth-child(3){
+  font-size: 14px;
   margin-bottom: 5px;
 }
 .info > span:nth-child(2){
+  font-size: 18px;
   font-weight: bold;
 }
 </style>

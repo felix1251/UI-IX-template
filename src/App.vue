@@ -1,15 +1,16 @@
 <template>
   <div class="main">
-    <div class="mobile-phone">
+    <button @click.preven="printThis">Print</button>
+    <div class="mobile-phone" id="printcontent">
       <div class="screen">
         <div class="head">
           <div class="brove">
-          <span class="speaker"></span>
-        </div>
+            <span class="speaker"></span>
+          </div>
         </div>
         <div class="phone-header">
           <div class="header-details">
-            <span class="time">{{time}}</span>
+            <span class="time">{{ time }}</span>
           </div>
           <div class="header-details">
             <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -24,16 +25,17 @@
 </template>
 
 <script>
+var htmlToImage = require("html-to-image");
 export default {
   data() {
     return {
       interval: null,
-      time: null
-    }
+      time: null,
+    };
   },
   beforeDestroy() {
     // prevent memory leak
-    clearInterval(this.interval)
+    clearInterval(this.interval);
   },
   created() {
     // update the time every second
@@ -41,11 +43,19 @@ export default {
       // Concise way to format time according to system locale.
       // In my case this returns "3:48:00 am"
       this.time = Intl.DateTimeFormat(navigator.language, {
-        hour: 'numeric',
-        minute: 'numeric'
-      }).format()
-    }, 1000)
-  }
+        hour: "numeric",
+        minute: "numeric",
+      }).format();
+    }, 1000);
+  },
+  methods: {
+    printThis() {
+      var node = document.getElementById("printcontent");
+      htmlToImage.toCanvas(node).then(function (canvas) {
+        // document.body.appendChild(canvas);
+      });
+    },
+  },
 };
 </script>
 
@@ -85,24 +95,24 @@ export default {
   position: absolute;
 }
 
-.header-details{
+.header-details {
   display: flex;
   margin: 0px 25px;
   color: white;
 }
 
-.fa{
+.fa {
   margin-left: 7px;
 }
 
-.time{
+.time {
   font-size: 14px;
 }
 
-.icon{
+.icon {
   width: 10px;
   height: 10px;
-  background: black
+  background: black;
 }
 
 .brove {
@@ -114,7 +124,7 @@ export default {
   z-index: 2;
 }
 
-.head{
+.head {
   display: flex;
   justify-content: center;
 }

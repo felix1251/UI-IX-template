@@ -1,9 +1,6 @@
 <template>
   <div
     class="login-screen"
-    :style="{
-      'background-image': 'url(' + require(`@/assets/cover.jpg`) + ')',
-    }"
   >
     <img class="logo" :src="require(`@/assets/company.png`)" />
     <form @submit.prevent="login">
@@ -33,7 +30,7 @@ export default {
   },
   methods:{
     login(){
-      window.location = "/onboarding"
+      window.location = "/pincode"
     }
   }
 };
@@ -43,6 +40,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: white;
   flex-direction: column;
   width: 100%;
   height: 100%;
@@ -53,7 +51,7 @@ export default {
 .logo {
   margin-top: -10px;
   margin-bottom: 15px;
-  width: 300px;
+  width: 290px;
   height: 137px;
   border: 2px solid white;
   border-radius: 15px;
@@ -66,16 +64,18 @@ input[type="password"] {
   padding: 12px 18px;
   margin: 8px 0;
   display: inline-block;
-  border: 2px solid #2e8bc0;
-  border-radius: 5px;
+  border: 2px solid #CBDF80;;
+  border-radius: 7px;
   box-sizing: border-box;
 }
 
 button {
-  background-color: #2e8bc0;
+  background-color: #5DA3DA;
   color: white;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 6px 10px 0 rgb(0 0 0 / 10%);
   padding: 14px 20px;
   margin: 8px 0;
+  font-size: 16px; 
   border: none;
   cursor: pointer;
   width: 100%;

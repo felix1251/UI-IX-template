@@ -1,9 +1,7 @@
 <template>
   <div
     class="onboarding-screen"
-    :style="{
-      'background-image': 'url(' + require(`@/assets/cover.jpg`) + ')',
-    }"
+    
   >
     <img v-if="counter == 1" class="logo" :src="require(`@/assets/meet.png`)" />
     <img v-if="counter == 2" class="logo" :src="require(`@/assets/capture.gif`)" />
@@ -26,12 +24,13 @@ export default {
   data() {
     return {
       counter: 1,
+      page: 'main'
     };
   },
   watch: {
     counter(value){
       if(value > 3){
-        this.$router.replace("/pincode")
+        this.$router.replace("/login")
       }
     }
   },
@@ -48,17 +47,18 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: white;
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
 }
-
 .info{
   font-weight: bold;
-  color: white;
-  font-size: 27px
+  color: #595959;
+  font-size: 23px;
+  margin: 5px
 }
 
 .logo {
@@ -69,10 +69,10 @@ export default {
   border: 2px solid white;
   border-radius: 15px;
   background-color: white;
-  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-.onboarding > img:nth-child(1) {
+.onboarding {
   margin-bottom: 15px;
   width: 300px;
   height: 200px;
@@ -80,11 +80,11 @@ export default {
   border: 2px solid white;
   border-radius: 15px;
   background-color: white;
-  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 6px 10px 0 rgb(0 0 0 / 10%);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
 }
 
 button {
-  background-color: #81B622;
+  background-color: #5DA3DA;
   color: white;
   width: 300px;
   padding: 10px 17px;
@@ -100,6 +100,7 @@ button {
   display: flex;
   flex-direction: row;
   gap: 2;
+  margin: 3px
 }
 
 .dot{
@@ -107,10 +108,10 @@ button {
   height: 17px;
   margin: 5px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #A9ABAD;
 }
 
 .dots > .active{
-  background-color: #2e8bc0;
+  background-color: #81B625;
 }
 </style>

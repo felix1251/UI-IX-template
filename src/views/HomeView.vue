@@ -4,7 +4,7 @@
       <div class="app-container">
         <router-link to="/loading-screen" exact>
           <div class="app">
-            <img class="logo" :src="require(`@/assets/app-logo.png`)" />
+            <img class="logo" :src="require(`@/assets/company-logo.png`)" />
           </div>
         </router-link>
         <span>ELS PSN</span>
@@ -45,16 +45,19 @@ export default {
 }
 
 .app {
-  background-image: linear-gradient(to left, #8bcd50, #2e8bc0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
   width: 50px;
   height: 50px;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 
 .app > .logo{
   width: 50px;
-  height: 50px;
 }
 
 .app-container > span {

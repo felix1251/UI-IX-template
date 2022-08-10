@@ -10,7 +10,7 @@
       <template v-for="(v, index) in values" :key="index">
         <input
           class="w-14 h-14 rounded-lg border border-gray outline-none focus:outline-none focus:border-primary focus:ring-0 text-center transition-all"
-          type=""
+          type="password"
           placeholder="*"
           pattern="[0-9]"
           :style="{
@@ -214,8 +214,11 @@ onBeforeUpdate(() => {
   align-items: center;
   gap: 10px;
 }
+.code-input > input::placeholder{
+  color: black
+}
 .code-input > input {
-  border: solid 2px black;
+  border: solid 2px #5DA3DA;
   font-family: "Lato";
   font-size: 20px;
   border-radius: 8px;
@@ -227,7 +230,7 @@ onBeforeUpdate(() => {
 }
 .code-input > input:focus {
   outline: none;
-  border: 2px solid #006fff;
+  border: 2px solid  #81B625;
   caret-color: #006fff;
 }
 .title {

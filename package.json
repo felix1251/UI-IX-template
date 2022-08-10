@@ -7,10 +7,12 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "html-to-image": "^1.9.0",
     "pincode-input": "^0.4.3",
     "vue": "^3.2.13",
     "vue-pincode-input": "^0.4.0",
     "vue-router": "^4.0.3",
+    "vue3-google-map": "^0.13.2",
     "vue3-verification-code-input": "^0.1.0",
     "vuex": "^4.0.0"
   },
