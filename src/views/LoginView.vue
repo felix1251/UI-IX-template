@@ -40,7 +40,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: white;
+  background-image: linear-gradient(36deg,rgba(217,232,127,1) 0%, rgba(0,212,255,1) 100%);
   flex-direction: column;
   width: 100%;
   height: 100%;
@@ -50,9 +50,8 @@ export default {
 }
 .logo {
   margin-top: -10px;
-  margin-bottom: 15px;
-  width: 290px;
-  height: 137px;
+  margin-bottom: 10px;
+  width: 275px;
   border: 2px solid white;
   border-radius: 15px;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 6px 10px 0 rgb(0 0 0 / 10%);
@@ -61,10 +60,10 @@ export default {
 input[type="email"],
 input[type="password"] {
   width: 100%;
-  padding: 12px 18px;
+  padding: 9px 18px;
   margin: 8px 0;
   display: inline-block;
-  border: 2px solid #CBDF80;;
+  border: 2px solid #cbdf80;;
   border-radius: 7px;
   box-sizing: border-box;
 }
@@ -73,9 +72,9 @@ button {
   background-color: #5DA3DA;
   color: white;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 10%), 0 6px 10px 0 rgb(0 0 0 / 10%);
-  padding: 14px 20px;
-  margin: 8px 0;
-  font-size: 16px; 
+  padding: 7px 20px;
+  margin: 10px 0;
+  font-size: 15px; 
   border: none;
   cursor: pointer;
   width: 100%;

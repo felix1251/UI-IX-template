@@ -230,7 +230,7 @@ onBeforeUpdate(() => {
 }
 .code-input > input:focus {
   outline: none;
-  border: 2px solid  #81B625;
+  border: 2px solid  #cbdf80;
   caret-color: #006fff;
 }
 .title {

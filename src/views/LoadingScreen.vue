@@ -51,7 +51,7 @@ export default {
 
 .loader {
   position: fixed;
-  bottom: 260px;
+  bottom: 230px;
   border: 6px solid #DCDCDC;
   border-radius: 50%;
   border-top: 6px solid #3498db;
